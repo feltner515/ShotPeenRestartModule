@@ -8,4 +8,4 @@ Instructions for use:
 
 Replace existing files in moose source with editied copies, then compile.
 
-Run a 
+Detailed instructions on setup and running application in conjunction with SP Flowsheet App in progress.
