@@ -8,7 +8,7 @@
 //* https://www.gnu.org/licenses/lgpl-2.1.html
 
 #include "IsotropicPlasticityStressUpdate.h"
-
+#include "UserObject.h"
 #include "Function.h"
 #include "ElasticityTensorTools.h"
 
