@@ -42,15 +42,21 @@ ADComputeStressBaseTempl<R2>::ADComputeStressBaseTempl(const InputParameters & p
     _elastic_strain(declareADProperty<R2>(_base_name + "elastic_strain")),
     _extra_stresses(getParam<std::vector<MaterialPropertyName>>("extra_stress_names").size()),
     _functions00(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_00")),
+    _functions10(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_10")),
+    _functions20(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_20")),
     _functions01(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_01")),
-    _functions02(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_02")),
     _functions11(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_11")),
+    _functions21(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_21")),
+    _functions02(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_02")),
     _functions12(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_12")),
     _functions22(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_stress_22")),
     _functions00es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_00")),
+    _functions10es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_10")),
+    _functions20es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_20")),
     _functions01es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_01")),
-    _functions02es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_02")),
     _functions11es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_11")),
+    _functions21es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_21")),
+    _functions02es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_02")),
     _functions12es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_12")),
     _functions22es(FunctionInterface::getFunctionByName(_base_name + "solution_fcn_elastic_strain_22"))
 {
@@ -67,8 +73,8 @@ template <typename R2>
 void
 ADComputeStressBaseTempl<R2>::initQpStatefulProperties()
 {
-  _initstress.fillFromInputVector(std::vector<Real>{_functions00.value(0, _q_point[_qp]), _functions01.value(0, _q_point[_qp]), _functions02.value(0, _q_point[_qp]), _functions11.value(0, _q_point[_qp]), _functions12.value(0, _q_point[_qp]), _functions22.value(0, _q_point[_qp])});
-  _initstrain.fillFromInputVector(std::vector<Real>{_functions00es.value(0, _q_point[_qp]), _functions01es.value(0, _q_point[_qp]), _functions02es.value(0, _q_point[_qp]), _functions11es.value(0, _q_point[_qp]), _functions12es.value(0, _q_point[_qp]), _functions22es.value(0, _q_point[_qp])});
+  _initstress.fillFromInputVector(std::vector<Real>{_functions00.value(0, _q_point[_qp]), _functions11.value(0, _q_point[_qp]), _functions22.value(0, _q_point[_qp]), _functions12.value(0, _q_point[_qp]), _functions02.value(0, _q_point[_qp]), _functions01.value(0, _q_point[_qp])});
+  _initstrain.fillFromInputVector(std::vector<Real>{_functions00es.value(0, _q_point[_qp]), _functions11es.value(0, _q_point[_qp]), _functions22es.value(0, _q_point[_qp]), _functions12es.value(0, _q_point[_qp]), _functions02es.value(0, _q_point[_qp]), _functions01es.value(0, _q_point[_qp])});
 
   
   _elastic_strain[_qp].zero();

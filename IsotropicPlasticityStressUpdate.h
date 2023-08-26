@@ -93,9 +93,12 @@ protected:
   // const GenericMaterialProperty<Real, is_ad> & _hardening_var_init;
   const Function & _functions;
   const Function & _functionsps00;
+  const Function & _functionsps10;
+  const Function & _functionsps20;
   const Function & _functionsps01;
-  const Function & _functionsps02;
   const Function & _functionsps11;
+  const Function & _functionsps21;
+  const Function & _functionsps02;
   const Function & _functionsps12;
   const Function & _functionsps22;
 

@@ -139,9 +139,12 @@ protected:
   bool _is_elasticity_tensor_guaranteed_isotropic;
 
   const Function & _functions00;
+  const Function & _functions10;
+  const Function & _functions20;
   const Function & _functions01;
-  const Function & _functions02;
   const Function & _functions11;
+  const Function & _functions21;
+  const Function & _functions02;
   const Function & _functions12;
   const Function & _functions22;
 

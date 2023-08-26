@@ -59,15 +59,21 @@ protected:
 
 
   const Function & _functions00;
+  const Function & _functions10;
+  const Function & _functions20;
   const Function & _functions01;
-  const Function & _functions02;
   const Function & _functions11;
+  const Function & _functions21;
+  const Function & _functions02;
   const Function & _functions12;
   const Function & _functions22;
   const Function & _functions00es;
+  const Function & _functions10es;
+  const Function & _functions20es;
   const Function & _functions01es;
-  const Function & _functions02es;
   const Function & _functions11es;
+  const Function & _functions21es;
+  const Function & _functions02es;
   const Function & _functions12es;
   const Function & _functions22es;
 
